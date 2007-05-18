@@ -1,5 +1,5 @@
 %define section	System/File Tools	
-%define version 2.31
+%define version 2.32
 %define release 1
 
 Summary: 	Easy to use front-end for ClamAV
@@ -14,7 +14,7 @@ BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}
 BuildRequires:  perl-Gtk2 perl-File-Find-Rule perl-Date-Calc perl-libwww-perl
 BuildRequires:	desktop-file-utils ImageMagick perl-encoding-warnings
 Requires: 	perl-Gtk2 perl-File-Find-Rule perl-Date-Calc perl-libwww-perl
-Requires: 	clamav >= 0.83 clamav-db gnomesu
+Requires: 	clamav >= 0.90 clamav-db gnomesu
 BuildArch: 	noarch
 
 Requires(post): desktop-file-utils
