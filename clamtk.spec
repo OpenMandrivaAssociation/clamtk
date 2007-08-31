@@ -6,13 +6,9 @@ License:	Artistic
 Group:		File tools
 URL:		http://clamtk.sourceforge.net/
 Source:		http://dl.sf.net/clamtk/%{name}-%{version}.tar.bz2
-BuildRequires:	perl(Gtk2)
-BuildRequires:	perl(File::Find::Rule)
-BuildRequires:	perl(Date::Calc)
-BuildRequires:	perl(LWP)
 BuildRequires:	desktop-file-utils
 BuildRequires:	imagemagick
-BuildRequires:	perl-encoding-warnings
+BuildRequires:	gettext
 Requires:	perl(Gtk2)
 Requires:	perl(File::Find::Rule)
 Requires:	perl(Date::Calc)
@@ -40,7 +36,7 @@ install -D -m0644 clamtk.xpm %{buildroot}%{_datadir}/pixmaps/clamtk.xpm
 install -D -m0644 clamtk.1.gz %{buildroot}%{_mandir}/man1/clamtk.1.gz
 install -D -m0644 clamtk.desktop %{buildroot}%{_datadir}/applications/clamtk.desktop
 
-desktop-file-install \
+desktop-file-install --vendor='' \
   --remove-category="Utility" \
   --add-category="GTK" \
   --add-category="System;Security"\
@@ -52,7 +48,7 @@ done
 
 %find_lang %{name}
 
-%define  nameicon clamtk.xpm
+%define nameicon clamtk.xpm
 
 mkdir -p %{buildroot}%{_iconsdir}/hicolor/{16x16,32x32,48x48}/apps
 convert -scale 48x48 %{nameicon} %{buildroot}/%{_iconsdir}/hicolor/48x48/apps/%{name}.png
