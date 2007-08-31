@@ -1,6 +1,6 @@
 Summary:	Easy to use front-end for ClamAV
 Name:		clamtk
-Version:	3.00
+Version:	3.01
 Release:	%mkrel 1
 License:	Artistic
 Group:		File tools
@@ -41,12 +41,10 @@ install -D -m0644 clamtk.1.gz %{buildroot}%{_mandir}/man1/clamtk.1.gz
 install -D -m0644 clamtk.desktop %{buildroot}%{_datadir}/applications/clamtk.desktop
 
 desktop-file-install \
-  --remove-category="Application" \
+  --remove-category="Utility" \
   --add-category="GTK" \
   --add-category="System;Security"\
   --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/%{name}.desktop
-
-mkdir -p %{buildroot}%{_datadir}/locale/{cs,da,de,es,fr,it,pl,pt_BR,ru,zh_CN}/LC_MESSAGES
 
 for n in po/*.mo ; do
 	%{__install} -D -m0644 $n %{buildroot}%{_datadir}/locale/`basename $n .mo`/LC_MESSAGES/clamtk.mo
