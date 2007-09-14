@@ -1,6 +1,6 @@
 Summary:	Easy to use front-end for ClamAV
 Name:		clamtk
-Version:	3.01
+Version:	3.03
 Release:	%mkrel 1
 License:	Artistic
 Group:		File tools
@@ -36,7 +36,7 @@ install -D -m0644 clamtk.xpm %{buildroot}%{_datadir}/pixmaps/clamtk.xpm
 install -D -m0644 clamtk.1.gz %{buildroot}%{_mandir}/man1/clamtk.1.gz
 install -D -m0644 clamtk.desktop %{buildroot}%{_datadir}/applications/clamtk.desktop
 
-desktop-file-install --vendor='' \
+desktop-file-install \
   --remove-category="Utility" \
   --add-category="GTK" \
   --add-category="System;Security"\
