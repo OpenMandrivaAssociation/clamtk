@@ -1,6 +1,6 @@
 Summary:	Easy to use front-end for ClamAV
 Name:		clamtk
-Version:	3.03
+Version:	3.04
 Release:	%mkrel 1
 License:	Artistic
 Group:		File tools
@@ -21,7 +21,7 @@ BuildRoot: 	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 ClamTk is a GUI front-end for ClamAV using Gtk2-perl.
-It is designed to be an easy-to-use, point and click 
+It is designed to be an easy-to-use, point and click
 virus scanner for Linux systems.
 
 %prep
