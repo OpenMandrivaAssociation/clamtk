@@ -6,6 +6,7 @@ License:	Artistic
 Group:		File tools
 URL:		http://clamtk.sourceforge.net/
 Source:		http://dl.sf.net/clamtk/%{name}-%{version}.tar.bz2
+Source1:        %{name}.desktop
 BuildRequires:	desktop-file-utils
 BuildRequires:	imagemagick
 BuildRequires:	gettext
@@ -34,7 +35,7 @@ rm -rf %{buildroot}
 install -D -m0755 clamtk %{buildroot}%{_bindir}/clamtk
 install -D -m0644 clamtk.xpm %{buildroot}%{_datadir}/pixmaps/clamtk.xpm
 install -D -m0644 clamtk.1.gz %{buildroot}%{_mandir}/man1/clamtk.1.gz
-install -D -m0644 clamtk.desktop %{buildroot}%{_datadir}/applications/clamtk.desktop
+install -D -m0644 %{SOURCE1} %{buildroot}%{_datadir}/applications/clamtk.desktop
 
 desktop-file-install \
   --remove-category="Utility" \
