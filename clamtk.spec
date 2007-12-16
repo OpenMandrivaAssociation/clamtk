@@ -1,13 +1,12 @@
 Summary:	Easy to use front-end for ClamAV
 Name:		clamtk
-Version:	3.04
+Version:	3.05
 Release:	%mkrel 1
 License:	Artistic
 Group:		File tools
 URL:		http://clamtk.sourceforge.net/
-Source:		http://dl.sf.net/clamtk/%{name}-%{version}.tar.bz2
-Source1:        %{name}.desktop
-BuildRequires:	desktop-file-utils
+Source:		http://dl.sf.net/clamtk/%{name}-%{version}.tar.gz
+Patch0:		clamtk-3.05-fix-desktop-file.patch
 BuildRequires:	imagemagick
 BuildRequires:	gettext
 Requires:	perl(Gtk2)
@@ -27,6 +26,7 @@ virus scanner for Linux systems.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 
@@ -35,13 +35,7 @@ rm -rf %{buildroot}
 install -D -m0755 clamtk %{buildroot}%{_bindir}/clamtk
 install -D -m0644 clamtk.xpm %{buildroot}%{_datadir}/pixmaps/clamtk.xpm
 install -D -m0644 clamtk.1.gz %{buildroot}%{_mandir}/man1/clamtk.1.gz
-install -D -m0644 %{SOURCE1} %{buildroot}%{_datadir}/applications/clamtk.desktop
-
-desktop-file-install \
-  --remove-category="Utility" \
-  --add-category="GTK" \
-  --add-category="System;Security"\
-  --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/%{name}.desktop
+install -D -m0644 clamtk.desktop %{buildroot}%{_datadir}/applications/clamtk.desktop
 
 for n in po/*.mo ; do
 	%{__install} -D -m0644 $n %{buildroot}%{_datadir}/locale/`basename $n .mo`/LC_MESSAGES/clamtk.mo
