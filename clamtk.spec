@@ -6,9 +6,8 @@ License:	Artistic
 Group:		File tools
 URL:		http://clamtk.sourceforge.net/
 Source:		http://dl.sf.net/clamtk/%{name}-%{version}.tar.gz
-Patch0:		clamtk-3.05-fix-desktop-file.patch
-BuildRequires:	imagemagick
 BuildRequires:	gettext
+BuildRequires:	desktop-file-utils
 Requires:	perl(Gtk2)
 Requires:	perl(File::Find::Rule)
 Requires:	perl(Date::Calc)
@@ -25,14 +24,14 @@ virus scanner for Linux systems.
 
 %prep
 %setup -q
-%patch0 -p0
 
 %build
 
 %install
 rm -rf %{buildroot}
+
 install -D -m0755 clamtk %{buildroot}%{_bindir}/clamtk
-install -D -m0644 clamtk.xpm %{buildroot}%{_datadir}/pixmaps/clamtk.xpm
+install -D -m0644 clamtk.png %{buildroot}%{_datadir}/pixmaps/clamtk.png
 install -D -m0644 clamtk.1.gz %{buildroot}%{_mandir}/man1/clamtk.1.gz
 install -D -m0644 clamtk.desktop %{buildroot}%{_datadir}/applications/clamtk.desktop
 
@@ -40,26 +39,25 @@ for n in po/*.mo ; do
 	%{__install} -D -m0644 $n %{buildroot}%{_datadir}/locale/`basename $n .mo`/LC_MESSAGES/clamtk.mo
 done
 
+sed -i -e 's/^Icon=%{name}.png$/Icon=%{name}/g' %{buildroot}%{_datadir}/applications/*
+
+desktop-file-install \
+	--add-category="GTK" \
+	--add-category="Security" \
+	--remove-category="Utility" \
+	--dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
+
 %find_lang %{name}
-
-%define nameicon clamtk.xpm
-
-mkdir -p %{buildroot}%{_iconsdir}/hicolor/{16x16,32x32,48x48}/apps
-convert -scale 48x48 %{nameicon} %{buildroot}/%{_iconsdir}/hicolor/48x48/apps/%{name}.png
-convert -scale 32x32 %{nameicon} %{buildroot}/%{_iconsdir}/hicolor/32x32/apps/%{name}.png
-convert -scale 16x16 %{nameicon} %{buildroot}/%{_iconsdir}/hicolor/16x16/apps/%{name}.png
 
 %post
 %{update_menus}
 %{update_desktop_database}
 %{update_mime_database}
-%update_icon_cache hicolor
 
 %postun
 %{clean_menus}
 %{clean_desktop_database}
 %{clean_mime_database}
-%clean_icon_cache hicolor
 
 %clean
 rm -rf %{buildroot}
@@ -68,7 +66,6 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc CHANGES DISCLAIMER LICENSE README
 %{_bindir}/%{name}
-%{_iconsdir}/hicolor/*/apps/%{name}.png
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/pixmaps/clamtk.xpm
+%{_datadir}/pixmaps/clamtk.png
 %{_mandir}/man1/%{name}.1.*
