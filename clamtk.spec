@@ -16,6 +16,7 @@ Requires:	clamav >= 0.90 clamav-db gnomesu
 Requires(post):	desktop-file-utils
 Requires(postun): desktop-file-utils
 BuildArch:	noarch
+BuildRoot: 	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 ClamTk is a GUI front-end for ClamAV using Gtk2-perl.
