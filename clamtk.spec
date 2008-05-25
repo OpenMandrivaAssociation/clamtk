@@ -1,11 +1,11 @@
 Summary:	Easy to use front-end for ClamAV
 Name:		clamtk
-Version:	3.08
+Version:	3.09
 Release:	%mkrel 1
 License:	Artistic
 Group:		File tools
 URL:		http://clamtk.sourceforge.net/
-Source:		http://dl.sf.net/clamtk/%{name}-%{version}.tar.bz2
+Source:		http://downloads.sourceforge.net/clamtk/%{name}-%{version}.tar.bz2
 BuildRequires:	gettext
 BuildRequires:	desktop-file-utils
 Requires:	perl(Gtk2)
