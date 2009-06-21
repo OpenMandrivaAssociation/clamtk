@@ -1,6 +1,6 @@
 Summary:	Easy to use front-end for ClamAV
 Name:		clamtk
-Version:	4.14
+Version:	4.15
 Release:	%mkrel 1
 License:	Artistic
 Group:		File tools
