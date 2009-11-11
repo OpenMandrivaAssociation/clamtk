@@ -1,7 +1,7 @@
 Summary:	Easy to use front-end for ClamAV
 Name:		clamtk
 Version:	4.20
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	Artistic
 Group:		File tools
 URL:		http://clamtk.sourceforge.net/
@@ -35,10 +35,8 @@ install -D -m0755 clamtk %{buildroot}%{_bindir}/clamtk
 install -D -m0644 clamtk.png %{buildroot}%{_datadir}/pixmaps/clamtk.png
 install -D -m0644 clamtk.1.gz %{buildroot}%{_mandir}/man1/clamtk.1.gz
 install -D -m0644 clamtk.desktop %{buildroot}%{_datadir}/applications/clamtk.desktop
-
-install -d "%{buildroot}%{_prefix}/lib/ClamTk"
-install -m0644 lib/*.pm "%{buildroot}%{_prefix}/lib/ClamTk/"
-
+install -d %{buildroot}%{perl_vendorlib}/ClamTk
+install -m0644 lib/*.pm %{buildroot}%{perl_vendorlib}/ClamTk
 
 for n in po/*.mo ; do
 	%{__install} -D -m0644 $n %{buildroot}%{_datadir}/locale/`basename $n .mo`/LC_MESSAGES/clamtk.mo
@@ -73,7 +71,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc CHANGES DISCLAIMER LICENSE README
 %{_bindir}/%{name}
-%{_prefix}/lib/ClamTk
+%{perl_vendorlib}/ClamTk
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/clamtk.png
 %{_mandir}/man1/%{name}.1.*
