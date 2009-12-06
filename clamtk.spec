@@ -5,14 +5,16 @@ Release:	%mkrel 2
 License:	Artistic
 Group:		File tools
 URL:		http://clamtk.sourceforge.net/
-Source:		http://downloads.sourceforge.net/clamtk/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/project/clamtk/ClamTk/%{version}/%{name}-%{version}.tar.gz
 BuildRequires:	gettext
 BuildRequires:	desktop-file-utils
 Requires:	perl(Gtk2)
 Requires:	perl(File::Find::Rule)
 Requires:	perl(Date::Calc)
 Requires:	perl(LWP)
-Requires:	clamav >= 0.90 clamav-db gnomesu
+Requires:	clamav >= 0.90
+Requires:	clamav-db
+Requires:	gnomesu
 Requires(post):	desktop-file-utils
 Requires(postun): desktop-file-utils
 BuildArch:	noarch
