@@ -1,7 +1,7 @@
 Summary:	Easy to use front-end for ClamAV
 Name:		clamtk
 Version:	4.25
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	Artistic
 Group:		File tools
 URL:		http://clamtk.sourceforge.net/
@@ -46,8 +46,8 @@ done
 
 desktop-file-install \
 	--add-category="GTK" \
-	--add-category="Security" \
-	--remove-category="Utility" \
+	--remove-category="Security" \
+	--remove-mime-type="vms/exe" \
 	--dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
 %find_lang %{name}
