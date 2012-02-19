@@ -1,6 +1,6 @@
 Summary:	Easy to use front-end for ClamAV
 Name:		clamtk
-Version:	4.36
+Version:	4.37
 Release:	%mkrel 1
 License:	Artistic
 Group:		File tools
@@ -50,7 +50,7 @@ desktop-file-install \
 	--remove-mime-type="vms/exe" \
 	--dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
-%find_lang %{name}
+%find_lang %{name} %{name}.lang
 
 %if %mdkversion < 200900
 %post
