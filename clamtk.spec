@@ -1,7 +1,7 @@
 Summary:	Easy to use front-end for ClamAV
 Name:		clamtk
-Version:	4.37
-Release:	%mkrel 1
+Version:	4.41
+Release:	1
 License:	Artistic
 Group:		File tools
 URL:		http://clamtk.sourceforge.net/
@@ -16,9 +16,8 @@ Requires:	clamav >= 0.90
 Requires:	clamav-db
 Requires:	gnomesu
 Requires(post):	desktop-file-utils
-Requires(postun): desktop-file-utils
+Requires(postun):	desktop-file-utils
 BuildArch:	noarch
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 ClamTk is a GUI front-end for ClamAV using Gtk2-perl.
@@ -31,10 +30,9 @@ virus scanner for Linux systems.
 %build
 
 %install
-rm -rf %{buildroot}
 
 install -D -m0755 clamtk %{buildroot}%{_bindir}/clamtk
-install -D -m0644 clamtk.png %{buildroot}%{_datadir}/pixmaps/clamtk.png
+install -D -m0644 images/clamtk.png %{buildroot}%{_datadir}/pixmaps/clamtk.png
 install -D -m0644 clamtk.1.gz %{buildroot}%{_mandir}/man1/clamtk.1.gz
 install -D -m0644 clamtk.desktop %{buildroot}%{_datadir}/applications/clamtk.desktop
 install -d %{buildroot}%{perl_vendorlib}/ClamTk
@@ -50,27 +48,9 @@ desktop-file-install \
 	--remove-mime-type="vms/exe" \
 	--dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
-%find_lang %{name} %{name}.lang
-
-%if %mdkversion < 200900
-%post
-%{update_menus}
-%{update_desktop_database}
-%{update_mime_database}
-%endif
-
-%if %mdkversion < 200900
-%postun
-%{clean_menus}
-%{clean_desktop_database}
-%{clean_mime_database}
-%endif
-
-%clean
-rm -rf %{buildroot}
+%find_lang %{name}
 
 %files -f %{name}.lang
-%defattr(-,root,root)
 %doc CHANGES DISCLAIMER LICENSE README
 %{_bindir}/%{name}
 %{perl_vendorlib}/ClamTk
