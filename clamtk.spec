@@ -4,8 +4,10 @@ Version:	4.42
 Release:	1
 License:	Artistic
 Group:		File tools
-URL:		http://clamtk.sourceforge.net/
+Url:		http://clamtk.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/project/clamtk/ClamTk/%{version}/%{name}-%{version}.tar.gz
+BuildArch:	noarch
+
 BuildRequires:	gettext
 BuildRequires:	desktop-file-utils
 Requires:	perl(Gtk2)
@@ -15,9 +17,7 @@ Requires:	perl(LWP)
 Requires:	clamav >= 0.90
 Requires:	clamav-db
 Requires:	gnomesu
-Requires(post):	desktop-file-utils
-Requires(postun):	desktop-file-utils
-BuildArch:	noarch
+Requires(post,postun):	desktop-file-utils
 
 %description
 ClamTk is a GUI front-end for ClamAV using Gtk2-perl.
@@ -30,7 +30,6 @@ virus scanner for Linux systems.
 %build
 
 %install
-
 install -D -m0755 clamtk %{buildroot}%{_bindir}/clamtk
 install -D -m0644 images/clamtk.png %{buildroot}%{_datadir}/pixmaps/clamtk.png
 install -D -m0644 clamtk.1.gz %{buildroot}%{_mandir}/man1/clamtk.1.gz
@@ -39,14 +38,15 @@ install -d %{buildroot}%{perl_vendorlib}/ClamTk
 install -m0644 lib/*.pm %{buildroot}%{perl_vendorlib}/ClamTk
 
 for n in po/*.mo ; do
-	%{__install} -D -m0644 $n %{buildroot}%{_datadir}/locale/`basename $n .mo`/LC_MESSAGES/clamtk.mo
+	install -D -m0644 $n %{buildroot}%{_datadir}/locale/`basename $n .mo`/LC_MESSAGES/clamtk.mo
 done
 
 desktop-file-install \
 	--add-category="GTK" \
 	--remove-category="Security" \
 	--remove-mime-type="vms/exe" \
-	--dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
+	--dir %{buildroot}%{_datadir}/applications \
+	%{buildroot}%{_datadir}/applications/*
 
 %find_lang %{name}
 
@@ -57,3 +57,4 @@ desktop-file-install \
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/pixmaps/clamtk.png
 %{_mandir}/man1/%{name}.1.*
+
