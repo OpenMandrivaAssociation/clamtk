@@ -16,7 +16,6 @@ Requires:	perl(Date::Calc)
 Requires:	perl(LWP)
 Requires:	clamav >= 0.90
 Requires:	clamav-db
-Requires:	gnomesu
 Requires(post,postun):	desktop-file-utils
 
 %description
