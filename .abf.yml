@@ -1,4 +1,5 @@
 removed_sources:
-  clamtk-4.42.tar.gz: bbc5302598b46055715f5a2d51deea47e9c02c74
-sources:
+  clamtk-4.41.tar.gz: 47b0c8bfba9abb9c8381661c66466866b81d492f
   clamtk-4.44.tar.gz: dae7c651c50c1f7db78475bedf69433578f9f6bb
+sources:
+  clamtk-4.45.tar.gz: d8c9328fdb075dbb0d05bb9c7fbe27850bb0f234
