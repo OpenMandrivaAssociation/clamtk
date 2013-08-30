@@ -1,7 +1,7 @@
 Summary:	Easy to use front-end for ClamAV
 Name:		clamtk
 Version:	4.45
-Release:	1
+Release:	2
 License:	Artistic
 Group:		File tools
 URL:		http://clamtk.sourceforge.net/
@@ -14,7 +14,6 @@ Requires:	perl(File::Find::Rule)
 Requires:	perl(LWP)
 Requires:	clamav >= 0.95
 Requires:	clamav-db
-Requires:	gnomesu
 Requires(post,postun):	desktop-file-utils
 BuildArch:	noarch
 
