@@ -1,0 +1,14 @@
+diff -rupN clamtk-5.05.old/lib/App.pm clamtk-5.05/lib/App.pm
+--- clamtk-5.05.old/lib/App.pm	2014-03-08 14:26:50.000000000 +0100
++++ clamtk-5.05/lib/App.pm	2014-03-31 19:57:05.030569752 +0200
+@@ -451,7 +451,9 @@ sub translate {
+ 
+ sub _ {
+     # stupid gettext wrapper
+-    return decode( 'utf8', gettext( $_[ 0 ] ) );
++    #return decode( 'utf8', gettext( $_[ 0 ] ) );
++    # Workaround weird troubles with UTF8 on OpenMandriva
++    return gettext( $_[ 0 ] );
+ }
+ 
+ 1;

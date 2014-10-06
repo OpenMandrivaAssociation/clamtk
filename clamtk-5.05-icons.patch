@@ -1,0 +1,66 @@
+diff -Naur clamtk-5.05.orig/lib/GUI.pm clamtk-5.05/lib/GUI.pm
+--- clamtk-5.05.orig/lib/GUI.pm	2014-10-06 07:23:10.497456359 -0400
++++ clamtk-5.05/lib/GUI.pm	2014-10-06 07:23:22.610456380 -0400
+@@ -237,17 +237,17 @@
+         },
+         {   link        => _( 'Whitelist' ),
+             description => _( 'View or update scanning whitelist' ),
+-            image       => 'gtk-new',
++            image       => 'document-new',
+             button      => FALSE,
+         },
+         {   link        => _( 'Network' ),
+             description => _( 'Edit proxy settings' ),
+-            image       => 'gtk-network',
++            image       => 'network-server',
+             button      => FALSE,
+         },
+         {   link        => _( 'Scheduler' ),
+             description => _( 'Schedule a scan or signature update' ),
+-            image       => 'gtk-properties',
++            image       => 'document-properties',
+             button      => FALSE,
+         },
+     );
+@@ -316,7 +316,7 @@
+     my @data = (
+         {   link        => _( 'Update' ),
+             description => _( 'Update antivirus signatures' ),
+-            image       => 'gtk-goto-bottom',
++            image       => 'go-bottom',
+             button      => FALSE,
+         },
+         {   link        => _( 'Update Assistant' ),
+@@ -395,7 +395,7 @@
+         },
+         {   link        => _( 'Quarantine' ),
+             description => _( 'Manage quarantined files' ),
+-            image       => 'gtk-refresh',
++            image       => 'document-revert',
+             button      => FALSE,
+         },
+     );
+@@ -465,12 +465,12 @@
+     my @centos_data = (
+         {   link        => _( 'Scan a file' ),
+             description => _( 'Scan a file' ),
+-            image       => 'gtk-file',
++            image       => 'x-office-document',
+             button      => FALSE,
+         },
+         {   link        => _( 'Scan a directory' ),
+             description => _( 'Scan a directory' ),
+-            image       => 'gtk-directory',
++            image       => 'folder',
+             button      => FALSE,
+         },
+     );
+@@ -491,7 +491,7 @@
+     my @data = (
+         {   link        => _( 'Analysis' ),
+             description => _( "View a file's reputation" ),
+-            image       => 'gtk-find',
++            image       => 'system-search',
+             button      => FALSE,
+         },
+     );
