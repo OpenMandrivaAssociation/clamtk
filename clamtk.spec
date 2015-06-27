@@ -5,7 +5,7 @@ Version:	5.18
 Release:	1
 License:	Artistic
 Group:		File tools
-URL:		http://code.google.com/p/%{name}/
+URL:		https://github.com/dave-theunsub/%{name}/
 Source0:	https://bitbucket.org/dave_theunsub/%{name}/downloads/%{name}-%{version}.tar.gz
 Patch0:		%{name}-5.05-fix-UTF8-handling.patch
 # Use more universal icon names to be able to run with both rosa-icons and oxygen
