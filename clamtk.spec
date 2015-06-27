@@ -2,7 +2,7 @@ Summary:	Easy to use front-end for ClamAV
 
 Name:		clamtk
 Version:	5.18
-Release:	1
+Release:	2
 License:	Artistic
 Group:		File tools
 URL:		https://github.com/dave-theunsub/%{name}/
@@ -54,10 +54,8 @@ for n in po/*.mo ; do
 done
 
 desktop-file-install \
-	--add-category="GTK" \
 	--add-category="System" \
-	--add-category="Security" \
-	--remove-category="Utility" \
+	--remove-category="Security" \
 	--dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
 %find_lang %{name}
