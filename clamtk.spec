@@ -18,7 +18,7 @@ Requires:	perl(Date::Calc)
 Requires:	perl(LWP)
 Requires:	clamav >= 0.98
 Requires:	clamav-db
-Reccomends:	yelp
+Recommends:	yelp
 BuildArch:	noarch
 
 %description
