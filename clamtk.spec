@@ -8,8 +8,6 @@ Group:		File tools
 URL:		https://gitlab.com/dave_m/clamtk/
 Source0:	https://bitbucket.org/davem_/clamtk-gtk3/downloads/%{name}-%{version}.tar.xz
 Patch0:		%{name}-5.05-fix-UTF8-handling.patch
-# Use more universal icon names to be able to run with both rosa-icons and oxygen
-Patch1:         %{name}-5.05-icons.patch
 BuildRequires:	gettext
 BuildRequires:	desktop-file-utils
 Requires:	gettext
@@ -29,7 +27,6 @@ easy-to-use, point and click virus scanner for Linux systems.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 # Nothing to do
