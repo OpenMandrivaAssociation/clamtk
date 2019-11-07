@@ -1,8 +1,2 @@
-removed_sources:
-  clamtk-4.41.tar.gz: 47b0c8bfba9abb9c8381661c66466866b81d492f
-  clamtk-4.44.tar.gz: dae7c651c50c1f7db78475bedf69433578f9f6bb
-  clamtk-4.45.tar.gz: d8c9328fdb075dbb0d05bb9c7fbe27850bb0f234
-  clamtk-5.03.tar.gz: 1f7c07ffbf99c6db520a21940433712d4f7ecd2f
-  clamtk-5.05.tar.gz: 63a11acdb0c8b8997480adf4bf54261646a7683d
 sources:
-  clamtk-5.18.tar.gz: 8d8d66f184620e2e1c3dcbfabcca9888f8c387a0
+  clamtk-6.02.tar.xz: 32e4a41805dfe466655cce493d2bdd0908110d2b
