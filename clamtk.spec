@@ -5,8 +5,8 @@ Version:	6.02
 Release:	1
 License:	Artistic
 Group:		File tools
-URL:		https://github.com/dave-theunsub/%{name}/
-Source0:	https://bitbucket.org/dave_theunsub/%{name}/downloads/%{name}-%{version}.tar.gz
+URL:		https://gitlab.com/dave_m/clamtk/
+Source0:	https://bitbucket.org/davem_/clamtk-gtk3/downloads/%{name}-%{version}.tar.xz
 Patch0:		%{name}-5.05-fix-UTF8-handling.patch
 # Use more universal icon names to be able to run with both rosa-icons and oxygen
 Patch1:         %{name}-5.05-icons.patch
