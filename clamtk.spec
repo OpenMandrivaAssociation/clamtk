@@ -1,12 +1,13 @@
 Summary:	Easy to use front-end for ClamAV
 
 Name:		clamtk
-Version:	6.14
+Version:	6.15
 Release:	1
 License:	Artistic
 Group:		File tools
 URL:		https://gitlab.com/dave_m/clamtk/
-Source0:	https://bitbucket.org/davem_/clamtk-gtk3/downloads/%{name}-%{version}.tar.xz
+Source0:	https://github.com/dave-theunsub/clamtk/releases/download/v%{version}/clamtk-%{version}.tar.xz
+#Source0:	https://bitbucket.org/davem_/clamtk-gtk3/downloads/%{name}-%{version}.tar.xz
 # Mirror 	https://github.com/dave-theunsub/clamtk/
 Patch0:		%{name}-5.05-fix-UTF8-handling.patch
 BuildRequires:	gettext
