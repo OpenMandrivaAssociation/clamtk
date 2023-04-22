@@ -56,7 +56,7 @@ desktop-file-install \
 
 
 %files -f %{name}.lang
-%doc CHANGES DISCLAIMER LICENSE README.md
+%doc CHANGES DISCLAIMER* LICENSE README.md
 %{_bindir}/%{name}
 %{perl_vendorlib}/ClamTk
 %{_datadir}/applications/%{name}.desktop
