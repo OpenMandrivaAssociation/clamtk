@@ -9,7 +9,7 @@ URL:		https://gitlab.com/dave_m/clamtk/
 Source0:	https://github.com/dave-theunsub/clamtk/releases/download/v%{version}/clamtk-%{version}.tar.xz
 #Source0:	https://bitbucket.org/davem_/clamtk-gtk3/downloads/%{name}-%{version}.tar.xz
 # Mirror 	https://github.com/dave-theunsub/clamtk/
-Patch0:		%{name}-5.05-fix-UTF8-handling.patch
+#Patch0:		%{name}-5.05-fix-UTF8-handling.patch
 BuildRequires:	gettext
 BuildRequires:	desktop-file-utils
 Requires:	gettext
@@ -28,7 +28,7 @@ easy-to-use, point and click virus scanner for Linux systems.
 
 %prep
 %setup -q
-%patch0 -p1
+#patch0 -p1
 
 %build
 # Nothing to do
